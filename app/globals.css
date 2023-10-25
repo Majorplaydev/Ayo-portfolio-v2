@@ -2,10 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+}
+
+
+@layer components {
+  .max-container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .input {
+    @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray max-sm:rounded-full;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,6 +35,26 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+}
+@font-face {
+  font-family: 'Amovand';
+  src: url('/assets/Fonts/Amovand/AMOVAND.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Martin';
+  src: url('/assets/Fonts/Martin/Web-TT/Martin.ttf') format('truetype');
+
+}
+@font-face {
+  font-family: 'Portia';
+  src: url('/assets/Fonts/Portia/Portia.otf') format('opentype');
+
+}
+@font-face {
+  font-family: 'Titillium';
+  src: url('/assets/Fonts/Titillium_Web/TitilliumWeb-Black.ttf') format('truetype');
+
 }
 
 body {
@@ -24,4 +65,5 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    font-family: 'Amovand', sans-serif;
 }
